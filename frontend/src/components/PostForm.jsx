@@ -37,7 +37,7 @@ function PostForm({ onPostCreated, postToEdit, onPostUpdated }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="post-form" onSubmit={handleSubmit}>
       <h2>{postToEdit ? "Edit Post" : "Create a New Post"}</h2>
       <div>
         <input

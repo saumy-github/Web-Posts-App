@@ -15,11 +15,13 @@ function PostItem({ post, onPostDeleted, onEditClick }) {
   };
 
   return (
-    <div>
+    <div className="post-item">
       <h3>{post.title}</h3>
       <p>{post.content}</p>
-      <button onClick={handleEdit}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="post-actions">
+        <button onClick={handleEdit}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 }

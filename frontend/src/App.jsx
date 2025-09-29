@@ -1,13 +1,3 @@
-// function App() {
-//   return (
-//     <div>
-//       <h1>Web Posts App</h1>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 // In App.jsx
 import React, { useState, useEffect } from "react";
 import PostForm from "./components/PostForm.jsx";
@@ -51,14 +41,13 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Web Posts App</h1>
       <PostForm
         onPostCreated={handlePostCreated}
         postToEdit={postToEdit}
         onPostUpdated={handlePostUpdated}
       />
-      <hr />
       <PostList
         posts={posts}
         onPostDeleted={handlePostDeleted}

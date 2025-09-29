@@ -2,7 +2,7 @@ import PostItem from "./PostItem.jsx";
 
 function PostList({ posts, onPostDeleted, onEditClick }) {
   return (
-    <div>
+    <div className="post-list">
       <h2>All Posts</h2>
       {posts.length > 0 ? (
         posts.map((post) => (
