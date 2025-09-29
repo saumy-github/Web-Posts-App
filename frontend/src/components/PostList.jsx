@@ -1,8 +1,21 @@
-function PostList() {
+import PostItem from "./PostItem.jsx";
+
+function PostList({ posts, onPostDeleted, onEditClick }) {
   return (
     <div>
       <h2>All Posts</h2>
-      <p>Posts will be displayed here...</p>
+      {posts.length > 0 ? (
+        posts.map((post) => (
+          <PostItem
+            key={post.id}
+            post={post}
+            onPostDeleted={onPostDeleted}
+            onEditClick={onEditClick}
+          />
+        ))
+      ) : (
+        <p>No posts available</p>
+      )}
     </div>
   );
 }
