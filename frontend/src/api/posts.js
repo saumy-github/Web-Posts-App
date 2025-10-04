@@ -1,5 +1,8 @@
-// API URL for posts endpoint
-const API_URL = "https://web-posts-app-hs5n.onrender.com/api/posts";
+// Environment-based API configuration
+const isProduction = import.meta.env.VITE_APP_MODE === "production";
+const API_BASE_URL = isProduction
+  ? import.meta.env.VITE_API_BASE_URL_PRODUCTION
+  : import.meta.env.VITE_API_BASE_URL_LOCAL;
 
 /**
  * Fetch all posts from the backend API
@@ -7,7 +10,7 @@ const API_URL = "https://web-posts-app-hs5n.onrender.com/api/posts";
  */
 export const fetchPosts = async () => {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(`${API_BASE_URL}/api/posts`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -27,7 +30,7 @@ export const fetchPosts = async () => {
  */
 export const createPost = async (postData) => {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_BASE_URL}/api/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +56,7 @@ export const createPost = async (postData) => {
  */
 export const deletePost = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
       method: "DELETE",
     });
 
@@ -74,7 +77,7 @@ export const deletePost = async (id) => {
  */
 export const updatePost = async (id, updateData) => {
   try {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
