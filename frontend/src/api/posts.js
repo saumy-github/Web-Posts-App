@@ -6,7 +6,7 @@ import { API_BASE_URL } from './config.js';
  */
 export const fetchPosts = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/posts`);
+    const response = await fetch(`${API_BASE_URL}/posts`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,7 +26,7 @@ export const fetchPosts = async () => {
  */
 export const createPost = async (postData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/posts`, {
+    const response = await fetch(`${API_BASE_URL}/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export const createPost = async (postData) => {
  */
 export const deletePost = async (id) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
       method: "DELETE",
     });
 
@@ -73,7 +73,7 @@ export const deletePost = async (id) => {
  */
 export const updatePost = async (id, updateData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
