@@ -7,26 +7,6 @@ const { getAllPosts, createPost, updatePost, deletePost } = require("./db.js");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// // Define which websites are allowed to make requests
-// const allowedOrigins = [
-//   'https://web-posts-app-orpin.vercel.app', // <-- Replace with your actual Vercel URL
-//   'http://localhost:5173'             // For local development
-// ];
-
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   credentials: true,
-// };
-
-// //apply middleware
-// app.use(cors(corsOptions));
-
 // Apply middleware
 app.use(cors()); // Allows requests from all origins
 app.use(express.json());
