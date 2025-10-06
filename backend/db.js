@@ -4,6 +4,7 @@ const { Pool } = require("pg");
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
+  // Sets the default schema for all connections in this pool
   options: "--search_path=web_posts_app_schema",
 });
 

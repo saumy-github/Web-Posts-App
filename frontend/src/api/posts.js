@@ -1,8 +1,4 @@
-// Environment-based API configuration
-const isProduction = import.meta.env.VITE_APP_MODE === "production";
-const API_BASE_URL = isProduction
-  ? import.meta.env.VITE_API_BASE_URL_PRODUCTION
-  : import.meta.env.VITE_API_BASE_URL_LOCAL;
+import { API_BASE_URL } from './config.js';
 
 /**
  * Fetch all posts from the backend API
