@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // Define which websites are allowed to make requests
 const allowedOrigins = [
-  'https://web-posts-app-hs5n.onrender.com', // <-- Replace with your actual Vercel URL
+  'https://web-posts-app-orpin.vercel.app/', // <-- Replace with your actual Vercel URL
   'http://localhost:5173'             // For local development
 ];
 
